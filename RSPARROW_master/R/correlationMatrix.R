@@ -121,7 +121,7 @@ correlationMatrix <- function(file.output.list,SelParmValues,subdata){
     colnames(df) <- names
     cor.allValuesM <- cor(df,method=c("spearman"),use="pairwise.complete.obs")
     
-    scatterplotMatrix(df,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE)
+    tryCatch(scatterplotMatrix(df,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE), error=function(e) print("FAIL!"))
     boxplot(log(df))
     
   }
@@ -157,7 +157,7 @@ correlationMatrix <- function(file.output.list,SelParmValues,subdata){
   sdf <- sample_n(df,nsamples)
   cor.sampleValues <- cor(sdf,method=c("spearman"),use="pairwise.complete.obs")
   # maximum size limited to 6472 observations
-  scatterplotMatrix(sdf,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE)
+  tryCatch(scatterplotMatrix(sdf,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE), error=function(e) print("FAIL!"))
   boxplot(sdf)
   
   # Transformed data
@@ -206,7 +206,7 @@ correlationMatrix <- function(file.output.list,SelParmValues,subdata){
   nsamples <- ifelse(rows < maxsamples,rows,maxsamples)
   sdf <- sample_n(df,nsamples)
   # maximum size limited to 6472 observations
-  scatterplotMatrix(sdf,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE)
+  tryCatch(scatterplotMatrix(sdf,diagonal="boxplot",reg.line=FALSE,use="pairwise.complete.obs",spread=FALSE,smooth=TRUE), error=function(e) print("FAIL!"))
   boxplot(sdf)
   
   dev.off()  # shuts down current graphics device
