@@ -87,7 +87,8 @@ executeRSPARROW<-function(settingValues,settingNames,activeFile, envir = .Global
         activeFile<-file.choose()
         assign("path_user",dirname(dirname(activeFile)),envir = .GlobalEnv)
       }
-      saved<-isScriptSaved(activeFile,testDir)
+      # saved<-isScriptSaved(activeFile,testDir)
+      saved <- 1
       assign("saved",saved,envir = .GlobalEnv)
       if (!saved){
         cat("Please save active control file :\n",activeFile,"\nRun Execution Terminated.")
