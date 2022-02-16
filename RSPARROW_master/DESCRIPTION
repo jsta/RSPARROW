@@ -134,6 +134,7 @@ Collate:
     'hydseq.R'
     'hydseqTerm.R'
     'importCSVcontrol.R'
+    'installPackages.R'
     'isScriptSaved.R'
     'makePaths.R'
     'mapBreaks.R'
@@ -165,6 +166,7 @@ Collate:
     'replaceNAs.R'
     'runBatchShiny.R'
     'runRsparrow.R'
+    'runShiny.R'
     'selectAll.R'
     'selectCalibrationSites.R'
     'selectDesignMatrix.R'
@@ -193,5 +195,6 @@ Collate:
     'validateMetrics.R'
     'validateFevalNoadj.R'
     'validCosmetic.R'
+    'validSetting.R'
     'verifyDemtarea.R'
 RoxygenNote: 6.1.0
